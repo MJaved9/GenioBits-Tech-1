@@ -10,7 +10,7 @@ const initialState = {
   
   export const reducer = (state = initialState, { type, payload }) => {
     switch (type) {
-      case types.GET_DOG_DETAILS_LOADING:
+      case types.GET_MEAL_DETAILS_LOADING:
         return {
           ...state,
           users: {
@@ -18,7 +18,7 @@ const initialState = {
             error: false,
           },
         };
-      case types.GET_DOG_DETAILS_SUCCESS:
+      case types.GET_MEAL_DETAILS_SUCCESS:
         return {
           ...state,
           users: {
@@ -27,7 +27,7 @@ const initialState = {
           },
           data: [...payload],
         };
-      case types.GET_DOG_DETAILS_ERROR:
+      case types.GET_MEAL_DETAILS_ERROR:
         return {
           ...state,
           users: {
@@ -35,7 +35,7 @@ const initialState = {
             error: true,
           },
         };
-      case types.DELETE_DOG_DETAILS_LOADING:
+      case types.DELETE_MEAL_DETAILS_LOADING:
         return {
           ...state,
           users: {
@@ -43,7 +43,7 @@ const initialState = {
             error: false,
           },
         };
-      case types.DELETE_DOG_DETAILS_SUCCESS:
+      case types.DELETE_MEAL_DETAILS_SUCCESS:
         return {
           ...state,
           users: {
@@ -51,7 +51,7 @@ const initialState = {
             error: false,
           },
         };
-      case types.DELETE_DOG_DETAILS_ERROR:
+      case types.DELETE_MEAL_DETAILS_ERROR:
         return {
           ...state,
           users: {
@@ -59,7 +59,7 @@ const initialState = {
             error: true,
           },
         };
-      case types.ADD_DOG_DETAILS_LOADING:
+      case types.ADD_MEAL_DETAILS_LOADING:
         return {
           ...state,
           users: {
@@ -67,7 +67,7 @@ const initialState = {
             error: false,
           },
         };
-      case types.ADD_DOG_DETAILS_SUCCESS:
+      case types.ADD_MEAL_DETAILS_SUCCESS:
         return {
           ...state,
           users: {
@@ -75,7 +75,7 @@ const initialState = {
             error: false,
           },
         };
-      case types.ADD_DOG_DETAILS_ERROR:
+      case types.ADD_MEAL_DETAILS_ERROR:
         return {
           ...state,
           users: {
@@ -83,7 +83,7 @@ const initialState = {
             error: true,
           },
         };
-      case types.UPDATE_DOG_DETAILS_LOADING:
+      case types.UPDATE_MEAL_DETAILS_LOADING:
         return {
           ...state,
           users: {
@@ -91,7 +91,7 @@ const initialState = {
             error: false,
           },
         };
-      case types.UPDATE_DOG_DETAILS_SUCCESS:
+      case types.UPDATE_MEAL_DETAILS_SUCCESS:
         return {
           ...state,
           users: {
@@ -99,7 +99,7 @@ const initialState = {
             error: false,
           },
         };
-      case types.UPDATE_DOG_DETAILS_ERROR:
+      case types.UPDATE_MEAL_DETAILS_ERROR:
         return {
           ...state,
           users: {

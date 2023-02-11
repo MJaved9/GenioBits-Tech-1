@@ -1,148 +1,148 @@
 import axios from "axios"
 import * as types from "./actionType"
 
-const getDOGDetailsLoading = (payload) => {
+const getMEALDetailsLoading = (payload) => {
     return {
-      type: types.GET_DOG_DETAILS_LOADING,
+      type: types.GET_MEAL_DETAILS_LOADING,
       payload,
     };
   };
-  const getDOGDetailsSuccess = (payload) => {
+  const getMEALDetailsSuccess = (payload) => {
     return {
-      type: types.GET_DOG_DETAILS_SUCCESS,
+      type: types.GET_MEAL_DETAILS_SUCCESS,
       payload,
     };
   };
-  const getDOGDetailsError = (payload) => {
+  const getMEALDetailsError = (payload) => {
     return {
-      type: types.GET_DOG_DETAILS_ERROR,
+      type: types.GET_MEAL_DETAILS_ERROR,
       payload,
     };
   };
   
-  const getDOGDetailsAPI = (payload) => (dispatch) => {
-    dispatch(getDOGDetailsLoading(payload));
+  const getMEALDetailsAPI = (payload) => (dispatch) => {
+    dispatch(getMEALDetailsLoading(payload));
     axios
-      .get(`https://mock-4-json-api.onrender.com/dogs?_page=${payload}&_limit=10`)
-      .then((r) => dispatch(getDOGDetailsSuccess(r.data)))
-      .catch((e) => dispatch(getDOGDetailsError(e.data)));
+      .get(` https://note-mock-14.onrender.com/meals?_page=${payload}&_limit=10`)
+      .then((r) => dispatch(getMEALDetailsSuccess(r.data)))
+      .catch((e) => dispatch(getMEALDetailsError(e.data)));
   };
   
   // ##########################################
-  const addDOGDetailsLoading = (payload) => {
+  const addMEALDetailsLoading = (payload) => {
     return {
-      type: types.DELETE_DOG_DETAILS_LOADING,
+      type: types.DELETE_MEAL_DETAILS_LOADING,
       payload,
     };
   };
-  const addDOGDetailsSuccess = (payload) => {
+  const addMEALDetailsSuccess = (payload) => {
     return {
-      type: types.DELETE_DOG_DETAILS_SUCCESS,
+      type: types.DELETE_MEAL_DETAILS_SUCCESS,
       payload,
     };
   };
-  const addDOGDetailsError = (payload) => {
+  const addMEALDetailsError = (payload) => {
     return {
-      type: types.DELETE_DOG_DETAILS_ERROR,
+      type: types.DELETE_MEAL_DETAILS_ERROR,
       payload,
     };
   };
   
-  const addDOGDetailsAPI = (payload) => (dispatch) => {
-    dispatch(addDOGDetailsLoading(payload));
+  const addMEALDetailsAPI = (payload) => (dispatch) => {
+    dispatch(addMEALDetailsLoading(payload));
     axios
-      .post(`https://mock-4-json-api.onrender.com/dogs`, payload)
+      .post(` https://note-mock-14.onrender.com/meals`, payload)
       .then((r) => {
-        dispatch(addDOGDetailsSuccess(r.data));
+        dispatch(addMEALDetailsSuccess(r.data));
       })
       .then(() => {
-        dispatch(getDOGDetailsAPI());
+        dispatch(getMEALDetailsAPI());
       })
-      .catch((e) => dispatch(addDOGDetailsError(e.data)));
+      .catch((e) => dispatch(addMEALDetailsError(e.data)));
   };
   // ##########################################
-  const updateDOGDetailsLoading = (payload) => {
+  const updateMEALDetailsLoading = (payload) => {
     return {
-      type: types.UPDATE_DOG_DETAILS_LOADING,
+      type: types.UPDATE_MEAL_DETAILS_LOADING,
       payload,
     };
   };
-  const updateDOGDetailsSuccess = (payload) => {
+  const updateMEALDetailsSuccess = (payload) => {
     return {
-      type: types.UPDATE_DOG_DETAILS_SUCCESS,
+      type: types.UPDATE_MEAL_DETAILS_SUCCESS,
       payload,
     };
   };
-  const updateDOGDetailsError = (payload) => {
+  const updateMEALDetailsError = (payload) => {
     return {
-      type: types.UPDATE_DOG_DETAILS_ERROR,
+      type: types.UPDATE_MEAL_DETAILS_ERROR,
       payload,
     };
   };
   
-  const updateDOGDetailsAPI = (payload) => (dispatch) => {
-    dispatch(updateDOGDetailsLoading(payload));
+  const updateMEALDetailsAPI = (payload) => (dispatch) => {
+    dispatch(updateMEALDetailsLoading(payload));
     axios
       .patch(
-        `https://mock-4-json-api.onrender.com/dogs/${payload.id}`,
+        ` https://note-mock-14.onrender.com/meals/${payload.id}`,
         payload.persone
       )
       .then((r) => {
-        dispatch(updateDOGDetailsSuccess(r.data));
+        dispatch(updateMEALDetailsSuccess(r.data));
       })
       .then(() => {
-        dispatch(getDOGDetailsAPI());
+        dispatch(getMEALDetailsAPI());
       })
-      .catch((e) => dispatch(updateDOGDetailsError(e.data)));
+      .catch((e) => dispatch(updateMEALDetailsError(e.data)));
   };
   
   // ##########################################
-  const deleteDOGDetailsLoading = (payload) => {
+  const deleteMEALDetailsLoading = (payload) => {
     return {
-      type: types.DELETE_DOG_DETAILS_LOADING,
+      type: types.DELETE_MEAL_DETAILS_LOADING,
       payload,
     };
   };
-  const deleteDOGDetailsSuccess = (payload) => {
+  const deleteMEALDetailsSuccess = (payload) => {
     return {
-      type: types.DELETE_DOG_DETAILS_SUCCESS,
+      type: types.DELETE_MEAL_DETAILS_SUCCESS,
       payload,
     };
   };
-  const deleteDOGDetailsError = (payload) => {
+  const deleteMEALDetailsError = (payload) => {
     return {
-      type: types.DELETE_DOG_DETAILS_ERROR,
+      type: types.DELETE_MEAL_DETAILS_ERROR,
       payload,
     };
   };
   
-  const deleteDOGDetailsAPI = (payload) => (dispatch) => {
-    dispatch(deleteDOGDetailsLoading(payload));
+  const deleteMEALDetailsAPI = (payload) => (dispatch) => {
+    dispatch(deleteMEALDetailsLoading(payload));
     axios
-      .delete(`https://mock-4-json-api.onrender.com/dogs/${payload}`)
+      .delete(` https://note-mock-14.onrender.com/meals/${payload}`)
       .then((r) => {
-        dispatch(deleteDOGDetailsSuccess(r.data));
+        dispatch(deleteMEALDetailsSuccess(r.data));
       })
       .then(() => {
-        dispatch(getDOGDetailsAPI());
+        dispatch(getMEALDetailsAPI());
       })
-      .catch((e) => dispatch(deleteDOGDetailsError(e.data)));
+      .catch((e) => dispatch(deleteMEALDetailsError(e.data)));
   };
 
-  const FilterDOGDetailsAPI = (payload) => (dispatch) => {
-    dispatch(getDOGDetailsLoading(payload));
+  const FilterMEALDetailsAPI = (payload) => (dispatch) => {
+    dispatch(getMEALDetailsLoading(payload));
     axios
       .get(payload)
       
-      .then((r) => dispatch(getDOGDetailsSuccess(r.data)))
-      .catch((e) => dispatch(getDOGDetailsError(e.data)));
+      .then((r) => dispatch(getMEALDetailsSuccess(r.data)))
+      .catch((e) => dispatch(getMEALDetailsError(e.data)));
   };
   
   export {
-    getDOGDetailsAPI,
-    addDOGDetailsAPI,
-    updateDOGDetailsAPI,
-    deleteDOGDetailsAPI,
-    FilterDOGDetailsAPI
+    getMEALDetailsAPI,
+    addMEALDetailsAPI,
+    updateMEALDetailsAPI,
+    deleteMEALDetailsAPI,
+    FilterMEALDetailsAPI
   };
   

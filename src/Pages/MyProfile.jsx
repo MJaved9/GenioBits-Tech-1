@@ -9,10 +9,14 @@ import {
   Td,
   TableCaption,
   TableContainer,
+  Box,
+  Heading,
 } from '@chakra-ui/react'
+import SaveRecipes from './SaveRecipes'
 const MyProfile = () => {
   let profile=JSON.parse(localStorage.getItem("profile"))
   return (
+    <Box>
     <TableContainer p={5}>
   <Table size='sm'>
     <Thead>
@@ -29,6 +33,9 @@ const MyProfile = () => {
     </Tbody>
   </Table>
 </TableContainer>
+<Heading>My Save Recipes</Heading>
+<SaveRecipes/>
+</Box>
   )
 }
 
